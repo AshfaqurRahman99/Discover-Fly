@@ -124,3 +124,24 @@ nav ul li a:hover, a.active{
     display: flex;
     justify-content: space-between;
 }
+#confirmTicket{
+    display: none;
+    height: 200px;
+    width: 350px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    align-items: center;
+    box-shadow: 3px 3px 10px whitesmoke;
+
+}
+#confirmTicket h2{
+    text-align: center;
+}
+.exit{
+    padding: 6px 8px;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    ;
+}

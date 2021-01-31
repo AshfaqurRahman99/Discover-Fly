@@ -28,7 +28,7 @@
 
     <!--Booking Section-->
     <main class="main-content container">
-        <div class="booking-form">
+        <div id="ticket-section" class="booking-form">
             <h3>Booking Flights</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
@@ -97,13 +97,20 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="bookTicket" class="btn-style">Book Now</button>
+        </div>
+
+        <div id="confirmTicket">
+            <h2 >Thank You For Booking</h2><br>
+            <h4>Please pay ticket fare and Confirm your TIcket before 24 hours.</h4><br>
+            <button id="exitBtn" class="exit" >Exit</button>
         </div>
 
         <div class="booking-content">
             <h1>discover <br> around the world</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise voluptatibus quam</p>
         </div>
+        
     </section>
 
     <!--Thank You-->
@@ -146,6 +153,24 @@
             const totalAmount = vatAmount + subtotalPrice;
 
             document.getElementById("totalAmount").innerText = totalAmount;
+
+            // confirmation Message
+                const bookTicket = document.getElementById("bookTicket").addEventListener("click",function(){
+                    if(totalAmount > 0){
+                        
+                        document.getElementById("confirmTicket").style.display = "block"
+                    }
+                    else{
+                        document.getElementById("confirmTicket").style.display = "none";
+                    }
+                    document.getElementById("exitBtn").addEventListener("click",function(){
+                    document.getElementById("confirmTicket").style.display = "none";
+                    
+                    })
+                    
+                })
+                
+                
             
         }
         // declare a function for convart data type
@@ -154,6 +179,10 @@
             const ticketNumberCount = parseInt(ticketNumberInput.value);
             return ticketNumberCount;
         }
+        
+        
+        
+        
     </script>
 
 </body>
